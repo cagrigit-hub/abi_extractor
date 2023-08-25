@@ -1,12 +1,12 @@
 {
-  "name": "extract_abi",
-  "version": "1.0.0",
+  "name": "@cakitomakito/extract_abi",
+  "version": "1.0.1",
   "description": "",
-  "main": "./build/index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc",
-    "publish": "npm publish --access public"
+    "test": "jest",
+    "build": "npx tsc"
   },
   "keywords": [
     "ethers",
@@ -18,11 +18,15 @@
   "author": "Cagri Kutay Ok @kutay_ok",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^29.5.4",
     "@types/node": "^20.5.6",
+    "jest": "^29.6.4",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "ts-node": "^10.9.1"
   }
 }
