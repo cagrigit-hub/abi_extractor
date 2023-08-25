@@ -1,6 +1,6 @@
 {
   "name": "@cakitomakito/extract_abi",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "npx tsc"
+    "build": "rm -rf build  && npx tsc"
   },
   "keywords": [
     "ethers",
@@ -28,8 +28,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "path": "^0.12.7",
     "ts-node": "^10.9.1"
   }
 }

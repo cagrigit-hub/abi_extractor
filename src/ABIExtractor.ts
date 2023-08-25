@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-class ABIExtractor {
+export class ABIExtractor {
   constructor(public path: string) {
     // validate path
     if (!path) {
@@ -38,4 +38,4 @@ class ABIExtractor {
   }
 }
 
-export default ABIExtractor;
+

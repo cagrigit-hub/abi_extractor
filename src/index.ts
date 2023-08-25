@@ -1,3 +1,2 @@
-import ABIExtractor from "./ABIExtractor";
+export * from "./ABIExtractor";
 
-export default ABIExtractor;
