@@ -10,7 +10,8 @@
   "scripts": {
     "test": "jest",
     "build": "rm -rf lib  && npx tsc",
-    "pub": "npm test && npm version patch && git add . && git commit -m 'pub' && git push && npm publish --access public || echo 'Publishing failed due to test failures.'"
+    "pub": "npm run test && npm run pub:after-tests",
+    "pub:after-tests": "npm version patch && git add . && git commit -m 'pub' && git push origin main && npm publish --access public"
   },
   "keywords": [
     "ethers",
