@@ -1,13 +1,12 @@
 {
   "name": "@cakitomakito/extract_abi",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "",
   "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",  
+  "types": "./lib/index.d.ts",
   "files": [
     "lib"
   ],
-
   "scripts": {
     "test": "jest",
     "build": "rm -rf lib  && npx tsc",
