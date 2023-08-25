@@ -3,10 +3,11 @@
   "version": "1.0.13",
   "description": "",
   "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "types": "./lib/index.d.ts",  
   "files": [
-    "lib/**/*"
+    "lib"
   ],
+
   "scripts": {
     "test": "jest",
     "build": "rm -rf lib  && npx tsc",
