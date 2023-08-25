@@ -1,4 +1,4 @@
-import Extractor from "..";
+import { ABIExtractor as Extractor } from "../ABIExtractor"
 import fs from "fs";
 
 beforeAll(() => {
@@ -26,22 +26,22 @@ afterAll(() => {
 
 describe("extract", () => {
   it("should called and give path to abis", () => {
-    const extractor = new Extractor("./bc");
+    const extractor = new Extractor("./bc", "artifacts");
     expect(extractor.getPath()).toBe("./bc");
   });
   it("should return abi if exists", () => {
-    const extractor = new Extractor("./bc");
+    const extractor = new Extractor("./bc", "artifacts");
     const abi = extractor.getABI("Lock");
     expect(abi).toEqual([{ x: "y" }]);
   });
   it("should throw error  abi if not exists", () => {
-    const extractor = new Extractor("./bc");
+    const extractor = new Extractor("./bc", "artifacts");
     expect(() => extractor.getABI("Lock2")).toThrowError();
   });
   it("should throw error if path is not valid", () => {
-    expect(() => new Extractor("CDA")).toThrowError();
+    expect(() => new Extractor("CDA", "artifacts")).toThrowError();
   });
   it("should throw an error path is valid but not exists", () => {
-    expect(() => new Extractor("./bc2")).toThrowError();
+    expect(() => new Extractor("./bc2", "artifacts")).toThrowError();
   });
 });

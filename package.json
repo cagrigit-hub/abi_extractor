@@ -1,15 +1,16 @@
 {
   "name": "@cakitomakito/extract_abi",
-  "version": "1.0.4",
+  "version": "1.0.9",
   "description": "",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
-    "lib"
+    "lib/**/*"
   ],
   "scripts": {
     "test": "jest",
-    "build": "rm -rf build  && npx tsc"
+    "build": "rm -rf lib  && npx tsc",
+    "pub" : "npm test && npm version patch && git add . && git commit -m 'pub' && git push && npm publish --access public || echo 'Publishing failed due to test failures.'"
   },
   "keywords": [
     "ethers",
@@ -28,6 +29,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@cakitomakito/extract_abi": "^1.0.5",
     "ts-node": "^10.9.1"
   }
 }

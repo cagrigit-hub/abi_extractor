@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 export class ABIExtractor {
-  constructor(public path: string) {
+  constructor(public path: string, public artifactsFolderName: string) {
     // validate path
     if (!path) {
         throw new Error("Path is required");
@@ -9,14 +9,18 @@ export class ABIExtractor {
     if(!fs.existsSync(path)) {
         throw new Error("Path does not exists");
     }
+    if(!artifactsFolderName) {
+        throw new Error("Artifacts folder name is required");
+    }
     this.path = path;
+    this.artifactsFolderName = artifactsFolderName;
   }
 
   getABI(smartContractName: string) {
     if (!smartContractName) {
       throw new Error("Smart contract name is required");
     }
-    const scPath = `artifacts/contracts/${smartContractName}.sol/${smartContractName}.json`;
+    const scPath = `${this.artifactsFolderName}/contracts/${smartContractName}.sol/${smartContractName}.json`;
     const filePath = path.join(this.path, scPath);
     // return error if path is not valid for example CDA\ cannot be a path
     if (!filePath) {
