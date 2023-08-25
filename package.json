@@ -1,6 +1,6 @@
 {
   "name": "@cakitomakito/extract_abi",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest",
     "build": "rm -rf lib  && npx tsc",
-    "pub" : "npm test && npm version patch && git add . && git commit -m 'pub' && git push && npm publish --access public || echo 'Publishing failed due to test failures.'"
+    "pub": "npm test && npm version patch && git add . && git commit -m 'pub' && git push && npm publish --access public || echo 'Publishing failed due to test failures.'"
   },
   "keywords": [
     "ethers",
