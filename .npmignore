@@ -3,4 +3,6 @@ test
 examples
 .gitignore
 History.md
-tests
+tests/
+src/tests
+lib/tests
